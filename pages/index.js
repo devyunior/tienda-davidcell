@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import NextLink from 'next/link';
 import { Grid, Link, Typography } from '@mui/material';
 import Layout from '../components/Layout';
@@ -73,7 +74,7 @@ export async function getServerSideProps() {
     .sort({
       rating: -1,
     })
-    .limit(6);
+    .limit(8);
   await db.disconnect();
   return {
     props: {

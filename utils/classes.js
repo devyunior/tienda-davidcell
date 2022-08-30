@@ -39,9 +39,9 @@ const classes = {
   },
   // header
   appbar: {
-    backgroundColor: '#161B22',
+    backgroundColor: '#fff',
     '& a': {
-      color: '#ffffff',
+      color: '#EF6900',
       marginLeft: 1,
     },
     search: {},
@@ -57,7 +57,7 @@ const classes = {
     flexGrow: 1,
   },
   navbarButton: {
-    color: '#ffffff',
+    color: '#EF6900',
     textTransform: 'initial',
   },
 
@@ -77,7 +77,7 @@ const classes = {
     },
   },
   searchButton: {
-    backgroundColor: '#EF6900',
+    backgroundColor: '#fff',
     padding: 1,
 
     '& span': {

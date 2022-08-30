@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
@@ -35,12 +36,13 @@ import {
   ListItemText,
   InputBase,
 } from '@mui/material';
-
+import FloatingWhatsApp from 'react-floating-whatsapp';
 import { Store } from '../utils/Store';
 
 export default function Search({ title, description, children }) {
   const { state, dispatch } = useContext(Store);
   const { darkMode, cart, userInfo } = state;
+  const cadena = '¡Hola! 🤝,\n¿Cómo podemos ayudar?';
 
   const theme = createTheme({
     components: {
@@ -107,6 +109,7 @@ export default function Search({ title, description, children }) {
 
   useEffect(() => {
     fetchCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const darkModeChangeHandler = () => {
@@ -138,7 +141,7 @@ export default function Search({ title, description, children }) {
   return (
     <>
       <Head>
-        <title>{title ? `${title} - Next Amazona` : 'Next Amazona'}</title>
+        <title>{title ? `${title} - Next Amazona` : 'Tienda Davidcell'}</title>
         {description && <meta name="description" content={description}></meta>}
       </Head>
       <ThemeProvider theme={theme}>
@@ -157,7 +160,8 @@ export default function Search({ title, description, children }) {
               <NextLink href="/" passHref>
                 <a>
                   <img
-                    src="https://res.cloudinary.com/davidcell/image/upload/v1659131088/logo_iyi3ol.png"
+                    sx={{ maxWidth: 'md' }}
+                    src="https://res.cloudinary.com/davidcell/image/upload/v1659475311/logo_iyi3ol_1_demiex.png"
                     alt="logo"
                   />
                 </a>
@@ -298,6 +302,18 @@ export default function Search({ title, description, children }) {
         <Container component="main" sx={classes.main}>
           {children}
         </Container>
+        <FloatingWhatsApp
+          phoneNumber="584146584044"
+          accountName="Davidcell"
+          allowClickAway
+          notification
+          notificationDelay={60000} // 1 minute
+          statusMessage="Clientes como tú hacen la diferencia."
+          chatMessage={cadena}
+          placeholder="Escribe tu mensaje.."
+          avatar="https://res.cloudinary.com/davidcell/image/upload/v1659487102/logo-ws_wjghdv.jpg"
+          notificationSound
+        />
         <Box component="footer" sx={classes.footer}>
           <Typography>All rights reserved. Davidcell c.a.</Typography>
         </Box>

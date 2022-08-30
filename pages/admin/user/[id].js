@@ -92,6 +92,7 @@ function UserEdit({ params }) {
       };
       fetchData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const submitHandler = async ({ name }) => {
